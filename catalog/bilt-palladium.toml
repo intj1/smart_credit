@@ -1,0 +1,99 @@
+# Values last reviewed 2026-11-23 from secondary sources (see source_url on each
+# entry). Re-check against Bilt's terms during the monthly review.
+#
+# Anniversary conversion: by default, at the first card anniversary in 2027 the
+# $200 Bilt Cash and the $400 hotel credit are replaced by a single $600 Bilt
+# Cash credit per cardmember year (unless you opt out in the Bilt app). When
+# that happens for your card, set effective_to on the two entries below and
+# uncomment the $600 entry.
+version = "2026-11-23"
+
+[product]
+id = "bilt-palladium"
+provider = "bilt"
+issuer = "Bilt (Column N.A. / Cardless)"
+name = "Bilt Palladium"
+annual_fee = 495.00
+name_hints = ["palladium", "bilt"]
+
+[[benefit]]
+id = "bilt-palladium-mortgage-points"
+name = "Points on mortgage payment"
+kind = "mortgage_points"
+unit = "points"
+value = 0
+cadence = "monthly"
+category = "other"
+payment_patterns = ["mortgage", "bilt\\s*(housing|rent|mortgage)"]
+base_points = 250
+tiers = [
+  { min_spend_ratio = 0.25, multiplier = 0.5 },
+  { min_spend_ratio = 0.50, multiplier = 0.75 },
+  { min_spend_ratio = 0.75, multiplier = 1.0 },
+  { min_spend_ratio = 1.00, multiplier = 1.25 },
+]
+cash_per_1000_points = 30.00
+how_to_use = "Two routes. Everyday-spend tiers: non-housing spend of 25% / 50% / 75% / 100% of the payment earns 0.5x / 0.75x / 1x / 1.25x points on it (250 points flat below 25%). Or spend Bilt Cash: $30 unlocks 1,000 points, up to 1x the payment. The payment is usually pulled by ACH and may not show on the card, so set the monthly payment amount on the card if it is not detected."
+source_url = "https://thepointsguy.com/credit-cards/bilt-2-0-new-tiers-points-rent-mortgage"
+
+[[benefit]]
+id = "bilt-palladium-hotel"
+name = "Bilt Travel hotel credit"
+value = 200.00
+cadence = "semiannual"
+category = "travel"
+credit_patterns = ["hotel\\s+credit", "bilt\\s+travel.*credit"]
+merchants = ["bilt\\s+travel"]
+how_to_use = "Book a hotel stay of 2+ nights in the Bilt Travel Portal. $200 for Jan-Jun and $200 for Jul-Dec, no rollover."
+source_url = "https://awardwallet.com/credit-cards/bilt-rewards/bilt-palladium-hotel-credit-guide/"
+
+[[benefit]]
+id = "bilt-palladium-bilt-cash"
+name = "Annual Bilt Cash"
+kind = "checkoff"
+value = 200.00
+cadence = "annual"
+category = "other"
+how_to_use = "$200 of Bilt Cash is deposited each January 1. Redeem it in the Bilt app (mortgage points, hotel bookings, partner credits) and record what you have spent here."
+source_url = "https://www.nerdwallet.com/travel/news/bilt-improves-bilt-cash"
+
+# [[benefit]]
+# id = "bilt-palladium-bilt-cash-600"
+# name = "Annual Bilt Cash (after anniversary conversion)"
+# kind = "checkoff"
+# value = 600.00
+# cadence = "annual"
+# reset_basis = "cardmember_year"
+# effective_from = 2027-01-01
+# how_to_use = "$600 of Bilt Cash each card anniversary, valid 12 months."
+# source_url = "https://www.nerdwallet.com/travel/news/bilt-improves-bilt-cash"
+
+[[benefit]]
+id = "bilt-palladium-walgreens"
+name = "Walgreens (paid with Bilt Cash)"
+kind = "checkoff"
+value = 10.00
+cadence = "monthly"
+category = "shopping"
+how_to_use = "Redeem $10 of Bilt Cash each month for Walgreens in the Bilt app. Monthly Bilt Cash credits do not roll over."
+source_url = "https://awardwallet.com/blog/?p=231892"
+
+[[benefit]]
+id = "bilt-palladium-lyft"
+name = "Lyft (paid with Bilt Cash)"
+kind = "checkoff"
+value = 10.00
+cadence = "monthly"
+category = "travel"
+how_to_use = "Redeem $10 of Bilt Cash each month toward Lyft in the Bilt app."
+source_url = "https://newsroom.biltrewards.com/biltcashredemptions"
+
+[[benefit]]
+id = "bilt-palladium-grubhub"
+name = "Grubhub (paid with Bilt Cash)"
+kind = "checkoff"
+value = 10.00
+cadence = "monthly"
+category = "dining"
+how_to_use = "Redeem $10 of Bilt Cash each month toward Grubhub in the Bilt app."
+source_url = "https://newsroom.biltrewards.com/biltcashredemptions"

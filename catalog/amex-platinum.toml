@@ -1,0 +1,162 @@
+# Values last reviewed 2026-11-23 from secondary sources (see source_url on each
+# entry). Re-check against the issuer's benefit terms during the monthly review.
+version = "2026-11-23"
+
+[product]
+id = "amex-platinum"
+provider = "amex"
+issuer = "American Express"
+name = "Amex Platinum"
+annual_fee = 895.00
+name_hints = ["platinum"]
+
+[[benefit]]
+id = "amex-platinum-hotel"
+name = "Lodging credit (FHR / Hotel Collection / Airbnb Luxe)"
+value = 300.00
+cadence = "semiannual"
+category = "travel"
+credit_patterns = ["amex\\s+hotel\\s*credit", "lodging\\s+credit"]
+merchants = ["amex\\s+fine\\s+hotels", "amex\\s+hotel\\s+collectn", "luxe\\s+airbnb"]
+how_to_use = "Book a prepaid Fine Hotels + Resorts or Hotel Collection stay (2-night minimum for Hotel Collection; FHR too from 2027), or a prepaid Airbnb Luxe stay of 2+ nights, through Amex Travel. Jan-Jun and Jul-Dec."
+source_url = "https://www.americanexpress.com/en-us/travel/benefits/how-to-use-hotel-credit"
+
+[[benefit]]
+id = "amex-platinum-resy"
+name = "Resy dining credit"
+value = 100.00
+cadence = "quarterly"
+enrollment_required = true
+category = "dining"
+credit_patterns = ["resy.*credit"]
+merchants = ["\\bresy\\b"]
+how_to_use = "Enroll, then pay with the Platinum Card at US Resy restaurants. Resy gift cards are excluded."
+source_url = "https://www.nerdwallet.com/credit-cards/news/amex-platinum-hikes-fee-adds-hundreds-in-credits"
+
+[[benefit]]
+id = "amex-platinum-lululemon"
+name = "lululemon credit"
+value = 75.00
+cadence = "quarterly"
+enrollment_required = true
+category = "shopping"
+credit_patterns = ["lululemon.*credit"]
+merchants = ["lululemon"]
+how_to_use = "Enroll, then shop at US lululemon stores (not outlets) or lululemon.com. Gift cards are excluded."
+source_url = "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+
+[[benefit]]
+id = "amex-platinum-uber-cash"
+name = "Uber Cash"
+kind = "checkoff"
+value = 15.00
+month_values = { "12" = 35.00 }
+cadence = "monthly"
+category = "travel"
+how_to_use = "Add the Platinum Card to your Uber account: $15 of Uber Cash each month, $35 in December. Expires at month end and never appears on the card statement, so check it off here once spent."
+source_url = "https://www.americanexpress.com/en-us/credit-cards/credit-intel/how-does-the-american-express-platinum-uber-credit-work/"
+
+[[benefit]]
+id = "amex-platinum-digital-entertainment"
+name = "Digital entertainment credit"
+value = 25.00
+cadence = "monthly"
+enrollment_required = true
+category = "subscriptions"
+credit_patterns = ["digital\\s+entertainment\\s+credit"]
+merchants = ["disney\\s*\\+|disney\\s*plus", "\\bhulu\\b", "\\bespn\\b", "new\\s+york\\s+times|nytimes", "paramount\\s*\\+|paramount\\s*plus", "peacock", "wall\\s+street\\s+journal|\\bwsj\\b", "youtube\\s*(premium|tv)"]
+how_to_use = "Enroll, then pay the provider directly: Disney+, Hulu, ESPN, The New York Times, Paramount+, Peacock, The Wall Street Journal, YouTube Premium or YouTube TV."
+source_url = "https://www.americanexpress.com/en-us/credit-cards/credit-intel/how-does-the-amex-platinum-digital-entertainment-credit-work/"
+
+[[benefit]]
+id = "amex-platinum-airline-fee"
+name = "Airline incidental fee credit"
+value = 200.00
+cadence = "annual"
+enrollment_required = true
+category = "travel"
+credit_patterns = ["airline\\s+fee\\s+(reimbursement|credit)"]
+how_to_use = "Enroll and select one airline, then charge incidentals (checked bags, seat fees, in-flight purchases) to the card. Tickets do not qualify."
+source_url = "https://upgradedpoints.com/credit-cards/amex-statement-credits"
+
+[[benefit]]
+id = "amex-platinum-uber-one"
+name = "Uber One membership credit"
+value = 120.00
+cadence = "annual"
+category = "subscriptions"
+credit_patterns = ["uber\\s+one.*credit"]
+merchants = ["uber\\s*\\*?\\s*one"]
+how_to_use = "Pay for an auto-renewing Uber One membership with the Platinum Card. Turn Uber Cash off for the membership charge. The credit can take up to 8 weeks."
+source_url = "https://www.thepointsguy.com/credit-cards/reviews/amex-platinum-review/"
+
+[[benefit]]
+id = "amex-platinum-clear"
+name = "CLEAR Plus credit"
+value = 209.00
+cadence = "annual"
+category = "travel"
+credit_patterns = ["clear\\s*(plus)?\\s+credit"]
+merchants = ["clearme|clear\\s*plus|\\bclear\\s*\\*"]
+how_to_use = "Pay for a CLEAR Plus membership with the Platinum Card. Sources disagree on $209 vs $219: check the benefit terms."
+source_url = "https://upgradedpoints.com/credit-cards/reviews/american-express-platinum-card/clear-credit/"
+
+[[benefit]]
+id = "amex-platinum-walmart-plus"
+name = "Walmart+ credit"
+value = 12.95
+cadence = "monthly"
+category = "subscriptions"
+credit_patterns = ["walmart\\s*\\+.*credit|walmart\\s*plus.*credit"]
+merchants = ["walmart\\s*\\+|walmart\\s*plus|wmt\\s*plus"]
+how_to_use = "Pay for a monthly Walmart+ membership with the Platinum Card ($12.95 plus tax). Annual plans are excluded."
+source_url = "https://upgradedpoints.com/credit-cards/amex-statement-credits/"
+
+[[benefit]]
+id = "amex-platinum-oura"
+name = "Oura Ring credit"
+value = 200.00
+cadence = "annual"
+enrollment_required = true
+category = "shopping"
+credit_patterns = ["oura.*credit"]
+merchants = ["oura"]
+how_to_use = "Enroll, then buy an Oura Ring at ouraring.com with the Platinum Card."
+source_url = "https://upgradedpoints.com/credit-cards/reviews/american-express-platinum-card/benefits/"
+
+[[benefit]]
+id = "amex-platinum-equinox"
+name = "Equinox credit"
+value = 300.00
+cadence = "annual"
+enrollment_required = true
+category = "subscriptions"
+credit_patterns = ["equinox.*credit"]
+merchants = ["equinox"]
+how_to_use = "Enroll, then pay for an Equinox club or Equinox+ membership with the Platinum Card."
+source_url = "https://upgradedpoints.com/credit-cards/reviews/american-express-platinum-card/benefits/"
+
+[[benefit]]
+id = "amex-platinum-global-entry"
+name = "Global Entry / TSA PreCheck fee credit"
+value = 120.00
+cadence = "one_time"
+renews_every_years = 4
+category = "travel"
+credit_patterns = ["global\\s+entry.*credit|tsa\\s*pre.*credit"]
+merchants = ["global\\s+entry|tsa\\s*pre|us\\s+customs|\\bcbp\\b|goes\\s+vetting"]
+how_to_use = "Pay the Global Entry ($120) or TSA PreCheck application fee with the card. Once every 4 years."
+source_url = "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+
+[[benefit]]
+id = "amex-platinum-saks"
+name = "Saks credit"
+value = 50.00
+cadence = "semiannual"
+enrollment_required = true
+category = "shopping"
+effective_to = 2026-06-30
+credit_patterns = ["saks.*credit"]
+merchants = ["saks"]
+how_to_use = "Ended June 30, 2026."
+source_url = "https://travelupdate.com/trending-amex-platinum-card-changes-in-2026-updated-list-with-key-dates/"

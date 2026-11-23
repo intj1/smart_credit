@@ -1,0 +1,23 @@
+[Unit]
+Description=Card Benefits Tracker database (PostgreSQL)
+
+[Container]
+ContainerName=card-benefits-db
+Image=docker.io/library/postgres:16-alpine
+Network=card-benefits.network
+Volume=card-benefits-db.volume:/var/lib/postgresql/data
+Environment=POSTGRES_USER=benefits POSTGRES_DB=benefits
+Secret=cbt-db-password,type=env,target=POSTGRES_PASSWORD
+# Not published to the host: only the app container can reach it.
+HealthCmd=pg_isready -U benefits -d benefits
+HealthInterval=30s
+HealthStartPeriod=30s
+# Small footprint for a Raspberry Pi.
+Exec=postgres -c shared_buffers=64MB -c max_connections=20
+
+[Service]
+Restart=always
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

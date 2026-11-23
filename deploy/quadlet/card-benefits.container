@@ -1,0 +1,32 @@
+[Unit]
+Description=Card Benefits Tracker
+Requires=card-benefits-db.service
+After=card-benefits-db.service
+
+[Container]
+ContainerName=card-benefits
+Image=localhost/card-benefits:latest
+Network=card-benefits.network
+# Reachable on the LAN at http://<pi>:8080. To keep it local to the Pi (for
+# example behind Caddy or Tailscale Serve), use 127.0.0.1:8080:8080.
+PublishPort=8080:8080
+EnvironmentFile=%h/.config/card-benefits/app.env
+Secret=cbt-database-url,type=env,target=DATABASE_URL
+Secret=cbt-encryption-key,type=env,target=APP_ENCRYPTION_KEY
+Secret=cbt-admin-password,type=env,target=ADMIN_PASSWORD
+# Optional: edit benefit values and matching rules without rebuilding the
+# image. Copy the repo's catalog/ there first.
+# Volume=%h/.config/card-benefits/catalog:/app/catalog:ro,Z
+HealthCmd=/app/card-benefits healthcheck
+HealthInterval=60s
+HealthStartPeriod=60s
+ReadOnly=true
+NoNewPrivileges=true
+DropCapability=ALL
+
+[Service]
+Restart=always
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

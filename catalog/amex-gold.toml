@@ -1,0 +1,59 @@
+# Values last reviewed 2026-11-23 from secondary sources (see source_url on each
+# entry). Re-check against the issuer's benefit terms during the monthly review.
+# credit_patterns are the statement-credit descriptions as reported by
+# cardholders; adjust them here if a credit stops matching.
+version = "2026-11-23"
+
+[product]
+id = "amex-gold"
+provider = "amex"
+issuer = "American Express"
+name = "Amex Gold"
+annual_fee = 325.00
+name_hints = ["gold"]
+
+[[benefit]]
+id = "amex-gold-dining"
+name = "Dining credit"
+value = 10.00
+cadence = "monthly"
+enrollment_required = true
+category = "dining"
+credit_patterns = ["amex\\s+dining\\s+credit", "gold.*dining\\s+credit"]
+merchants = ["grubhub", "seamless", "cheesecake\\s*factory", "five\\s*guys", "buffalo\\s*wild\\s*wings", "\\bwonder\\b"]
+how_to_use = "Enroll, then pay with the Gold Card at Grubhub (incl. Seamless), The Cheesecake Factory, Five Guys, Buffalo Wild Wings or Wonder. Goldbelly and Wine.com were removed in mid-2026. No rollover."
+source_url = "https://www.americanexpress.com/en-us/credit-cards/credit-intel/amex-gold-dining/"
+
+[[benefit]]
+id = "amex-gold-uber-cash"
+name = "Uber Cash"
+kind = "checkoff"
+value = 10.00
+cadence = "monthly"
+category = "dining"
+how_to_use = "Add the Gold Card to your Uber account; $10 of Uber Cash lands in the Uber wallet each month for US rides or Uber Eats. It never appears on the card statement, so check it off here once spent."
+source_url = "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+
+[[benefit]]
+id = "amex-gold-dunkin"
+name = "Dunkin' credit"
+value = 7.00
+cadence = "monthly"
+enrollment_required = true
+category = "dining"
+credit_patterns = ["dunkin.*credit"]
+merchants = ["dunkin"]
+how_to_use = "Enroll, then pay with the Gold Card at US Dunkin' locations (loading the Dunkin' app balance also works for most cardholders)."
+source_url = "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+
+[[benefit]]
+id = "amex-gold-resy"
+name = "Resy credit"
+value = 50.00
+cadence = "semiannual"
+enrollment_required = true
+category = "dining"
+credit_patterns = ["resy.*credit"]
+merchants = ["\\bresy\\b"]
+how_to_use = "Enroll, then pay with the Gold Card at US Resy restaurants (no reservation needed) or on other eligible Resy purchases. Jan-Jun and Jul-Dec."
+source_url = "https://www.nerdwallet.com/credit-cards/news/american-express-gold-card-unveils-new-and-updated-benefits"

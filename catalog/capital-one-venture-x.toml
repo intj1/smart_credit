@@ -1,0 +1,48 @@
+# Values last reviewed 2026-11-23 from secondary sources (see source_url on each
+# entry). Re-check against the issuer's benefit terms during the monthly review.
+version = "2026-11-23"
+
+[product]
+id = "capital-one-venture-x"
+provider = "capital_one"
+issuer = "Capital One"
+name = "Capital One Venture X"
+annual_fee = 395.00
+name_hints = ["venture x", "venturex"]
+
+[[benefit]]
+id = "capital-one-venture-x-travel-credit"
+name = "Capital One Travel credit"
+# Applied as a discount at checkout since 2023, so no statement credit ever
+# posts: tracked as a check-off.
+kind = "checkoff"
+value = 300.00
+cadence = "annual"
+reset_basis = "cardmember_year"
+category = "travel"
+how_to_use = "Book flights, hotels or cars through Capital One Travel; the credit comes off at checkout. It resets on your account anniversary. Mark the amount you have used here."
+source_url = "https://www.capitalone.com/learn-grow/more-than-money/all-about-venture-x/"
+
+[[benefit]]
+id = "capital-one-venture-x-anniversary-miles"
+name = "Anniversary bonus miles"
+kind = "checkoff"
+unit = "miles"
+value = 10000
+cadence = "annual"
+reset_basis = "cardmember_year"
+category = "travel"
+how_to_use = "10,000 miles post automatically after each account anniversary. Check it off once you see them."
+source_url = "https://www.capitalone.com/learn-grow/more-than-money/all-about-venture-x/"
+
+[[benefit]]
+id = "capital-one-venture-x-global-entry"
+name = "Global Entry / TSA PreCheck fee credit"
+value = 120.00
+cadence = "one_time"
+renews_every_years = 4
+category = "travel"
+credit_patterns = ["global\\s+entry.*credit|tsa\\s*pre.*credit|credit.*(global\\s+entry|tsa)"]
+merchants = ["global\\s+entry|tsa\\s*pre|us\\s+customs|\\bcbp\\b|goes\\s+vetting"]
+how_to_use = "Pay the Global Entry or TSA PreCheck application fee with the card. The credit posts within 2 billing cycles; once every 4 years."
+source_url = "https://www.capitalone.com/credit-cards/disclosures/additional-benefit-terms/"
